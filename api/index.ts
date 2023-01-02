@@ -42,7 +42,7 @@ export function getAllPosts(fields: string[] = []) {
     .map((slug) => getPostBySlug(slug, fields))
     .sort(
       (post1, post2) =>
-        Number(new Date(post1.date)) - Number(new Date(post2.date))
+        Number(new Date(post2.date)) - Number(new Date(post1.date))
     );
 
   return posts;
