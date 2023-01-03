@@ -1,0 +1,37 @@
+.markdown {
+  @apply text-lg leading-relaxed;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  @apply my-6;
+}
+
+.markdown h1 {
+  @apply text-4xl font-bold mb-0 mt-12 leading-snug;
+}
+
+.markdown h2 {
+  @apply text-3xl font-bold mt-12 mb-4 leading-snug;
+}
+
+.markdown h3 {
+  @apply text-2xl font-semibold mt-8 mb-4 leading-snug;
+}
+
+.markdown ul {
+  @apply ml-9;
+}
+
+.markdown li {
+  @apply list-disc;
+}
+
+.markdown p code {
+  background-color: rgba(135, 131, 120, 0.15);
+  color: #eb5757;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
