@@ -5,10 +5,9 @@ interface PostPreviewProps
   extends Pick<Post, "slug" | "title" | "date" | "description"> {}
 
 function PostPreview({ slug, title, date, description }: PostPreviewProps) {
-  console.log(date);
   return (
     <Link href={`/posts/${slug}`}>
-      <h3 className="text-2xl mt-3 mb-1 hover:underline">{title}</h3>
+      <h3 className="text-2xl font-bold mt-3 mb-1 text-green-600">{title}</h3>
       <p className="text-base text-gray-600">{date}</p>
       <p className="text-base text-gray-600">{description}</p>
     </Link>
