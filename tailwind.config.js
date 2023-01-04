@@ -1,6 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -10,6 +11,7 @@ module.exports = {
       colors: {
         code: {
           red: "#EB5757",
+          dark: "#1e1f22",
           gray: "rgba(135,131,120,0.15)",
         },
       },
@@ -27,6 +29,11 @@ module.exports = {
                 borderRadius: "3px",
               },
             },
+          },
+        },
+        dark: {
+          css: {
+            color: theme("colors.gray.300"),
           },
         },
       }),

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="text-center bg-slate-300 p-4 text-xs">
+    <div className="text-center bg-slate-300 p-4 text-xs dark:bg-code-dark">
       <div className="mb-1">
         contact:
         <a href="mailto:prefer2park@gmail.com">prefer2park@gmail.com</a>

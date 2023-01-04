@@ -1,15 +1,43 @@
-import "styles/globals.css";
-import "styles/atom-one-dark.min.css";
+import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
+
+import useTheme from "hooks/useTheme";
 
 import Layout from "@components/Layout";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 
+import { THEME_KEY } from "constants";
 import SEO from "seo.config";
 
+import "styles/globals.css";
+import "styles/atom-one-dark.min.css";
+
 export default function App({ Component, pageProps }: AppProps) {
+  const { themeMode, changeThemeToDark, changeThemeToLight } = useTheme();
+
+  const handleThemeToggle: React.MouseEventHandler = () => {
+    if (themeMode === "light") {
+      changeThemeToDark();
+    } else {
+      changeThemeToLight();
+    }
+  };
+
+  useEffect(() => {
+    const mode =
+      localStorage.getItem(THEME_KEY) ??
+      window.matchMedia("(prefers-color-scheme:dark)").matches
+        ? "dark"
+        : "light";
+    if (mode === "dark") {
+      changeThemeToDark();
+    } else {
+      changeThemeToLight();
+    }
+  }, []);
+
   return (
     <>
       <DefaultSeo
@@ -21,7 +49,7 @@ export default function App({ Component, pageProps }: AppProps) {
           },
         ]}
       />
-      <Header />
+      <Header onToggleTheme={handleThemeToggle} theme={themeMode} />
       <Layout>
         <Component {...pageProps} />
       </Layout>

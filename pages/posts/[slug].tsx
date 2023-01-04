@@ -18,7 +18,7 @@ const Post = ({ post }: PostProps) => {
   return (
     <>
       <PageSEO title={title} description={description} slug={slug} />
-      <article className="prose">
+      <article className="prose dark:prose-invert">
         <PostHeader title={title} date={date} />
         <ReactMarkdown
           remarkPlugins={[remarkMath]}
