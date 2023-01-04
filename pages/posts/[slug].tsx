@@ -4,6 +4,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
 import PostHeader from "@components/PostHeader";
+import PageSEO from "@components/PageSEO";
 
 import Post from "types/Post";
 import { getAllPosts, getPostBySlug } from "api";
@@ -13,16 +14,20 @@ type PostProps = {
 };
 
 const Post = ({ post }: PostProps) => {
+  const { slug, title, date, description, content } = post;
   return (
-    <article className="prose lg:prose-xl">
-      <PostHeader title={post.title} date={post.date} />
-      <ReactMarkdown
-        remarkPlugins={[remarkMath]}
-        rehypePlugins={[rehypeHighlight, rehypeKatex]}
-      >
-        {post.content}
-      </ReactMarkdown>
-    </article>
+    <>
+      <PageSEO title={title} description={description} slug={slug} />
+      <article className="prose lg:prose-xl">
+        <PostHeader title={title} date={date} />
+        <ReactMarkdown
+          remarkPlugins={[remarkMath]}
+          rehypePlugins={[rehypeHighlight, rehypeKatex]}
+        >
+          {content}
+        </ReactMarkdown>
+      </article>
+    </>
   );
 };
 
