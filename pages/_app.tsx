@@ -8,7 +8,7 @@ import Layout from "@components/Layout";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 
-import { THEME_KEY } from "constants";
+import { THEME_KEY, THEME } from "constants/index";
 import SEO from "seo.config";
 
 import "styles/globals.css";
@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const { themeMode, changeThemeToDark, changeThemeToLight } = useTheme();
 
   const handleThemeToggle: React.MouseEventHandler = () => {
-    if (themeMode === "light") {
+    if (themeMode === THEME.LIGHT) {
       changeThemeToDark();
     } else {
       changeThemeToLight();
@@ -29,14 +29,14 @@ export default function App({ Component, pageProps }: AppProps) {
     const mode =
       localStorage.getItem(THEME_KEY) ??
       window.matchMedia("(prefers-color-scheme:dark)").matches
-        ? "dark"
-        : "light";
-    if (mode === "dark") {
+        ? THEME.DARK
+        : THEME.LIGHT;
+    if (mode === THEME.DARK) {
       changeThemeToDark();
     } else {
       changeThemeToLight();
     }
-  }, []);
+  });
 
   return (
     <>
