@@ -8,9 +8,7 @@ interface PostHeaderProps {
 const PostHeader = ({ title, date }: PostHeaderProps) => {
   return (
     <>
-      <h1 className="font-extrabold text-4xl border-b mt-8 mb-2 pb-2">
-        {title}
-      </h1>
+      <h1 className="font-extrabold border-b mt-9 mb-2 pb-3">{title}</h1>
       <div className="font-light text-right text-gray-400 mb-4">{date}</div>
     </>
   );
