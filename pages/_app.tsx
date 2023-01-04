@@ -5,6 +5,7 @@ import { DefaultSeo } from "next-seo";
 
 import Layout from "@components/Layout";
 import Header from "@components/Header";
+import Footer from "@components/Footer";
 
 import SEO from "seo.config";
 
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Footer />
     </>
   );
 }
