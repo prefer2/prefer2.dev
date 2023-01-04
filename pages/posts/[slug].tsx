@@ -1,11 +1,12 @@
-import rehypeHighlight from "rehype-highlight";
 import ReactMarkdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 import PostHeader from "@components/PostHeader";
 
 import Post from "types/Post";
 import { getAllPosts, getPostBySlug } from "api";
-import markdownStyle from "styles/markdown.module.css";
 
 type PostProps = {
   post: Post;
@@ -15,7 +16,10 @@ const Post = ({ post }: PostProps) => {
   return (
     <article className="prose lg:prose-xl">
       <PostHeader title={post.title} date={post.date} />
-      <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+      <ReactMarkdown
+        remarkPlugins={[remarkMath]}
+        rehypePlugins={[rehypeHighlight, rehypeKatex]}
+      >
         {post.content}
       </ReactMarkdown>
     </article>
@@ -29,13 +33,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-  ]);
+  const post = getPostBySlug(params.slug);
 
   return {
     props: {
@@ -45,7 +43,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = getAllPosts();
 
   return {
     paths: posts.map((post) => {
