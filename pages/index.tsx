@@ -26,13 +26,7 @@ const Home = ({ allPosts }: HomeProps) => {
 };
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    "title",
-    "slug",
-    "date",
-    "description",
-    "content",
-  ]);
+  const allPosts = getAllPosts();
 
   return {
     props: { allPosts },
