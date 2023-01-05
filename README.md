@@ -1,20 +1,22 @@
-# 나만의 블로그 만들기
+# prefer2.dev
 
 https://prefer2-dev.vercel.app/
 
-## Tech Stack
+## Dependencies
 
 - Next.js
 - Typescript
 - Tailwind
 - Vercel
 
-## ToDo
+## Front Matter
 
-- [x] 코드블록 꾸미기
-- [ ] pagination
-- [ ] empty state 추가
-- [ ] 앞글, 전글 이동가능하도록
-- [ ] rss
-- [ ] seo
-- [ ] 라이트모드/다크모드
+```
+---
+title: 제목이 들어가는 곳 # required
+date: 2023-01-05 # required
+description: '간단한 설명을 적어둡니다' #required
+tags:
+  - typescript # not required, 여러개 가능
+---
+```
