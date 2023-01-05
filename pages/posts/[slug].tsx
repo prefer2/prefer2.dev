@@ -8,13 +8,15 @@ import PageSEO from "@components/PageSEO";
 
 import Post from "types/Post";
 import { getAllPosts, getPostBySlug } from "api";
+import Tag from "@components/Tag";
 
 type PostProps = {
   post: Post;
 };
 
 const Post = ({ post }: PostProps) => {
-  const { slug, title, date, description, content } = post;
+  const { slug, title, date, description, content, tags } = post;
+
   return (
     <>
       <PageSEO title={title} description={description} slug={slug} />
@@ -27,6 +29,9 @@ const Post = ({ post }: PostProps) => {
           {content}
         </ReactMarkdown>
       </article>
+      <div className="flex flex-row gap-2 mt-5">
+        tags: {tags && tags.map((tag) => <Tag key={tag} tag={tag} />)}
+      </div>
     </>
   );
 };

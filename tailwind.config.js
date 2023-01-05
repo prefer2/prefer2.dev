@@ -29,6 +29,10 @@ module.exports = {
                 borderRadius: "3px",
               },
             },
+            img: {
+              margin: "auto",
+              padding: "20px",
+            },
           },
         },
         dark: {
