@@ -10,7 +10,7 @@ const Icon = ({ children, to, size = "s" }: IconProps) => {
     <a
       href={to}
       className={`${
-        size === "s" ? "w-10" : "w-20"
+        size === "s" ? "w-10" : size === "m" ? "w-12" : "w-20"
       } p-1 fill-gray-800 dark:fill-slate-50`}
     >
       {children}
