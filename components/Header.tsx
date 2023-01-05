@@ -14,13 +14,13 @@ interface HeaderProps {
 
 const Header = ({ theme, onToggleTheme }: HeaderProps) => {
   return (
-    <header className="flex flex-row justify-between items-center h-16 border-b">
-      <Link className="p-4 text-xl font-bold" href={"/"}>
+    <header className="flex flex-row justify-between items-center h-16 border-b px-5 lg:px-10">
+      <Link className="py-4 text-xl font-bold" href={"/"}>
         Prefer2
       </Link>
       <div className="flex">
         <Nav />
-        <button className="mr-10" onClick={onToggleTheme}>
+        <button onClick={onToggleTheme}>
           {theme === "dark" ? <Moon /> : <Sun />}
         </button>
       </div>
