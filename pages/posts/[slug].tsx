@@ -4,7 +4,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
 import PostHeader from "@components/PostHeader";
-import PageSEO from "@components/PageSEO";
+import PostSEO from "@components/PostSEO";
 
 import Post from "types/Post";
 import { getAllPosts, getPostBySlug } from "api";
@@ -19,7 +19,7 @@ const Post = ({ post }: PostProps) => {
 
   return (
     <>
-      <PageSEO title={title} description={description} slug={slug} />
+      <PostSEO title={title} description={description} slug={slug} />
       <article className="prose dark:prose-invert">
         <PostHeader title={title} date={date} />
         <ReactMarkdown

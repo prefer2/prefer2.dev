@@ -1,16 +1,16 @@
 import { NextSeo } from "next-seo";
 import SEO from "seo.config";
 
-interface PageSEOProps {
+interface PostSEOProps {
   title: string;
-  description?: string;
+  description: string;
   slug: string;
 }
 
-const PageSEO = ({ title, description, slug }: PageSEOProps) => {
+const PostSEO = ({ title, description, slug }: PostSEOProps) => {
   return (
     <NextSeo
-      title={`${title} - ${SEO.title}`}
+      title={title}
       description={description}
       canonical={`${SEO.url}/${slug}`}
       openGraph={{
@@ -22,4 +22,4 @@ const PageSEO = ({ title, description, slug }: PageSEOProps) => {
   );
 };
 
-export default PageSEO;
+export default PostSEO;
