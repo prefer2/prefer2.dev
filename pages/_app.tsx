@@ -28,9 +28,9 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const mode =
       localStorage.getItem(THEME_KEY) ??
-      window.matchMedia("(prefers-color-scheme:dark)").matches
+      (window.matchMedia("(prefers-color-scheme:dark)").matches
         ? THEME.DARK
-        : THEME.LIGHT;
+        : THEME.LIGHT);
     if (mode === THEME.DARK) {
       changeThemeToDark();
     } else {
