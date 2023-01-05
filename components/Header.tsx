@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import Nav from "@components/Nav";
 
-import Moon from "assests/moon";
-import Sun from "assests/sun";
+import Moon from "assests/icons/Moon";
+import Sun from "assests/icons/Sun";
 import { ThemeMode } from "types";
 
 interface HeaderProps {
