@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react";
-
 const Comment = () => {
   return (
     <section
@@ -11,7 +9,7 @@ const Comment = () => {
         scriptElem.src = "https://utteranc.es/client.js";
         scriptElem.async = true;
         scriptElem.setAttribute("repo", "prefer2/prefer2.dev");
-        scriptElem.setAttribute("issue-term", "pathname");
+        scriptElem.setAttribute("issue-term", "title");
         scriptElem.setAttribute("theme", "github-light");
         scriptElem.crossOrigin = "anonymous";
         elem.replaceChildren(scriptElem);
