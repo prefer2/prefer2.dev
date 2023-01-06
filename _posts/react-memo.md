@@ -5,6 +5,8 @@ description: useMemo, useCallback은 서비스~
 tags:
   - react
   - memo
+  - useMemo
+  - useCallback
 ---
 
 > props이 변경되지 않았을 경우 리렌더링 되지 않도록 해준다
@@ -88,7 +90,7 @@ function useCallback(fn, dependencies) {
 
 ## 언제 useMemo와 useCallback을 사용해야 할까
 
-![kent 형님의 useCallback관련 트위터.png]("https://user-images.githubusercontent.com/67692759/210934059-9ab4cc52-a400-4de6-9304-8458f2ae2eae.png")
+![kent 형님의 useCallback관련 트위터.png](https://user-images.githubusercontent.com/67692759/210934059-9ab4cc52-a400-4de6-9304-8458f2ae2eae.png)
 
 의존성 배열이 있다면 React가 이전 함수들에게 참조를 가지고 있을 수 있다. 왜냐하면 memorization은 이전과 동일한 의존성이 주어진다면, 가지고 있던 옛 버전의 복사본을 return하는 것을 뜻하기 때문이다. 이것은 React가 의존성 배열도 동일성 체크를 위해 가지고 있음을 뜻한다(물론 클로저에 의해서 일어나는 일이니 당연한 말이다)
 
