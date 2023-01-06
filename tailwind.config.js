@@ -10,7 +10,6 @@ module.exports = {
     extend: {
       colors: {
         code: {
-          red: "#EB5757",
           dark: "#1e1f22",
           gray: "rgba(135,131,120,0.15)",
         },
@@ -23,7 +22,7 @@ module.exports = {
             },
             p: {
               code: {
-                color: theme("colors.code.red"),
+                color: theme("colors.blue.400"),
                 backgroundColor: theme("colors.code.gray"),
                 padding: "0.2rem 0.4rem",
                 borderRadius: "3px",
