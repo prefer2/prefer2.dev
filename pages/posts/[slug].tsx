@@ -5,10 +5,11 @@ import rehypeKatex from "rehype-katex";
 
 import PostHeader from "@components/PostHeader";
 import PostSEO from "@components/PostSEO";
+import Tag from "@components/Tag";
+import Comment from "@components/Comment";
 
 import Post from "types/Post";
 import { getAllPosts, getPostBySlug } from "api";
-import Tag from "@components/Tag";
 
 type PostProps = {
   post: Post;
@@ -29,9 +30,10 @@ const Post = ({ post }: PostProps) => {
           {content}
         </ReactMarkdown>
       </article>
-      <div className="flex flex-row gap-2 mt-5">
+      <div className="flex flex-row gap-2 my-10">
         tags: {tags && tags.map((tag) => <Tag key={tag} tag={tag} />)}
       </div>
+      <Comment />
     </>
   );
 };
