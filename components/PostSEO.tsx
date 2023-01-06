@@ -12,7 +12,7 @@ const PostSEO = ({ title, description, slug }: PostSEOProps) => {
     <NextSeo
       title={title}
       description={description}
-      canonical={`${SEO.url}/post/${slug}`}
+      canonical={`${SEO.url}/posts/${slug}`}
       openGraph={{
         url: `${SEO.url}/${slug}`,
         title,
