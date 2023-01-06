@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Link from "next/link";
 
 import Nav from "@components/Nav";
@@ -14,7 +13,7 @@ interface HeaderProps {
 
 const Header = ({ theme, onToggleTheme }: HeaderProps) => {
   return (
-    <header className="flex flex-row justify-between items-center h-16 border-b px-5 lg:px-10">
+    <header className="fixed top-0 w-full flex flex-row justify-between items-center h-16 border-b px-5 bg-white lg:px-10 dark:bg-code-dark">
       <Link className="py-4 text-xl font-bold" href={"/"}>
         Prefer2
       </Link>
