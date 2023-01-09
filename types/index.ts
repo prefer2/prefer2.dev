@@ -1,3 +1,3 @@
-import { THEME } from "constants/index";
+import { THEME_TYPE } from "constants/index";
 
-export type ThemeMode = typeof THEME[keyof typeof THEME];
+export type ThemeMode = typeof THEME_TYPE[keyof typeof THEME_TYPE];

@@ -1,4 +1,8 @@
+import useThemeMode from "hooks/useThemeMode";
+
 const Comment = () => {
+  const { themeMode } = useThemeMode();
+
   return (
     <section
       ref={(elem) => {
@@ -10,7 +14,7 @@ const Comment = () => {
         scriptElem.async = true;
         scriptElem.setAttribute("repo", "prefer2/prefer2.dev");
         scriptElem.setAttribute("issue-term", "title");
-        scriptElem.setAttribute("theme", "github-light");
+        scriptElem.setAttribute("theme", `github-${themeMode}`);
         scriptElem.crossOrigin = "anonymous";
         elem.replaceChildren(scriptElem);
       }}
