@@ -1,6 +1,6 @@
 export default {
   url: "https://prefer2-dev.vercel.app",
-  title: "prefer의 블로그",
+  title: "prefer2의 블로그",
   subtitle: "prefer2",
   description: "prefer2의 개발 블로그입니다",
   author: {
