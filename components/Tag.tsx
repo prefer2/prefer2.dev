@@ -6,7 +6,7 @@ interface TagProps {
 
 const Tag = ({ tag }: TagProps) => {
   return (
-    <div className="py-0.5 px-1 w-fit rounded-md bg-blue-100 text-black">{`${tag}`}</div>
+    <div className="px-2 w-fit rounded-md bg-blue-100 text-black text-xs leading-5">{`${tag}`}</div>
   );
 };
 

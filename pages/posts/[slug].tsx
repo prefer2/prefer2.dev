@@ -32,7 +32,7 @@ const Post = ({ post, nav }: PostProps) => {
           {content}
         </ReactMarkdown>
       </article>
-      <div className="flex flex-row gap-2 my-10">
+      <div className="flex flex-row gap-2 mt-10 text-xs">
         tags: {tags && tags.map((tag) => <Tag key={tag} tag={tag} />)}
       </div>
       <PostNavigator prev={nav.prev} next={nav.next} />
