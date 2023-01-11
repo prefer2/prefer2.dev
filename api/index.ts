@@ -30,3 +30,27 @@ export const getAllPosts = () => {
 
   return posts;
 };
+
+export const getPrevNextPosts = (slug: string) => {
+  const slugs = getPostSlugs();
+
+  let slugIndex = 0;
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug))
+    .sort(
+      (post1, post2) =>
+        Number(new Date(post2.date)) - Number(new Date(post1.date))
+    )
+    .map((post, idx) => {
+      if (post.slug === slug) slugIndex = idx;
+      return { title: post.title, slug: post.slug };
+    });
+
+  if (slugIndex === 0) return { prev: posts[slugIndex + 1] };
+  if (slugIndex === slugs.length - 1) return { next: posts[slugIndex - 1] };
+
+  const nextSlug = posts[slugIndex - 1];
+  const prevSlug = posts[slugIndex + 1];
+
+  return { prev: prevSlug, next: nextSlug };
+};

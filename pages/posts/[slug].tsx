@@ -6,16 +6,18 @@ import rehypeKatex from "rehype-katex";
 import PostHeader from "@components/PostHeader";
 import PostSEO from "@components/PostSEO";
 import Tag from "@components/Tag";
+import PostNavigator, { PostNavigatorProps } from "@components/PostNavigator";
 import Comment from "@components/Comment";
 
 import Post from "types/Post";
-import { getAllPosts, getPostBySlug } from "api";
+import { getAllPosts, getPostBySlug, getPrevNextPosts } from "api";
 
-type PostProps = {
+interface PostProps {
   post: Post;
-};
+  nav: PostNavigatorProps;
+}
 
-const Post = ({ post }: PostProps) => {
+const Post = ({ post, nav }: PostProps) => {
   const { slug, title, date, description, content, tags } = post;
 
   return (
@@ -33,6 +35,7 @@ const Post = ({ post }: PostProps) => {
       <div className="flex flex-row gap-2 my-10">
         tags: {tags && tags.map((tag) => <Tag key={tag} tag={tag} />)}
       </div>
+      <PostNavigator prev={nav.prev} next={nav.next} />
       <Comment />
     </>
   );
@@ -46,10 +49,12 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug);
+  const nav = getPrevNextPosts(params.slug);
 
   return {
     props: {
       post,
+      nav,
     },
   };
 }
@@ -58,13 +63,11 @@ export async function getStaticPaths() {
   const posts = getAllPosts();
 
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
+    paths: posts.map((post) => ({
+      params: {
+        slug: post.slug,
+      },
+    })),
     fallback: false,
   };
 }
