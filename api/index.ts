@@ -49,8 +49,8 @@ export const getPrevNextPosts = (slug: string) => {
   if (slugIndex === 0) return { prev: posts[slugIndex + 1] };
   if (slugIndex === slugs.length - 1) return { next: posts[slugIndex - 1] };
 
-  const nextSlug = posts[slugIndex - 1];
-  const prevSlug = posts[slugIndex + 1];
+  const nextPost = posts[slugIndex - 1];
+  const prevPost = posts[slugIndex + 1];
 
-  return { prev: prevSlug, next: nextSlug };
+  return { prev: prevPost, next: nextPost };
 };
