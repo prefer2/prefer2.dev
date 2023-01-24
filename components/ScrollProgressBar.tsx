@@ -27,7 +27,7 @@ const ScrollProgressBar = () => {
   return (
     <div
       style={{ width: `${scrollPercentage}%` }}
-      className={`fixed top-16 h-1 bg-blue-200`}
+      className={`fixed z-50 top-16 h-1 bg-blue-200`}
     />
   );
 };

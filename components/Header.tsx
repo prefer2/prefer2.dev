@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 w-full flex flex-row justify-between items-center h-16 px-5 border-b bg-white lg:px-10 dark:bg-code-dark dark:border-b-gray-900">
+      <header className="fixed z-50 top-0 w-full flex flex-row justify-between items-center h-16 px-5 border-b bg-white lg:px-10 dark:bg-code-dark dark:border-b-gray-900">
         <Link className="py-4 text-xl font-bold" href={"/"}>
           Prefer2
         </Link>

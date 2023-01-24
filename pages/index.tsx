@@ -1,8 +1,11 @@
+import { motion } from "framer-motion";
+
 import PageSEO from "@components/PageSEO";
 import PostPreview from "@components/PostPreview";
 
 import { getAllPosts } from "api";
 import Post from "types/Post";
+import { showUp } from "constants/animate";
 
 type HomeProps = {
   allPosts: Post[];
@@ -16,13 +19,20 @@ const Home = ({ allPosts }: HomeProps) => {
       <PageSEO title="Home" slug="/" />
       <ul className="flex flex-col gap-3">
         {allPosts.map((post) => (
-          <PostPreview
+          <motion.div
             key={post.slug}
-            slug={post.slug}
-            title={post.title}
-            date={post.date}
-            description={post.description}
-          />
+            initial="initial"
+            whileInView="animate"
+            viewport={{ amount: 0.6, once: true }}
+            variants={showUp}
+          >
+            <PostPreview
+              slug={post.slug}
+              title={post.title}
+              date={post.date}
+              description={post.description}
+            />
+          </motion.div>
         ))}
       </ul>
     </>
