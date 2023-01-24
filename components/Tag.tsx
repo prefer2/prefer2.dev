@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface TagProps {
@@ -6,7 +7,9 @@ interface TagProps {
 
 const Tag = ({ tag }: TagProps) => {
   return (
-    <div className="px-2 w-fit rounded-md bg-blue-100 text-black text-xs leading-5">{`${tag}`}</div>
+    <Link href={`/tags/${tag}`}>
+      <div className="px-2 py-0.5 w-fit rounded-md bg-blue-100 text-black text-xs leading-5 md:text-sm">{`${tag}`}</div>
+    </Link>
   );
 };
 
