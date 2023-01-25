@@ -41,7 +41,13 @@ const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="font-bold text-3xl">안녕하세요, 박선호입니다</h2>
+            <h2 className="font-bold text-2xl">
+              안녕하세요. 프론트엔드 개발자 박선호입니다.
+            </h2>
+            <p className="py-5 px-1">
+              함께 성장하는 팀문화에 관심이 많으며 모르는 것을 두려워하지 않고
+              배우기 위해 노력합니다.
+            </p>
           </div>
         </div>
       </div>

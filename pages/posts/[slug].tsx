@@ -11,6 +11,7 @@ import Comment from "@components/Comment";
 
 import Post from "types/Post";
 import { getAllPosts, getPostBySlug, getPrevNextPosts } from "api";
+import { formatDate } from "utils";
 
 interface PostProps {
   post: Post;
@@ -24,7 +25,7 @@ const Post = ({ post, nav }: PostProps) => {
     <>
       <PostSEO title={title} description={description} slug={slug} />
       <article className="prose dark:prose-invert">
-        <PostHeader title={title} date={date} />
+        <PostHeader title={title} date={formatDate(date)} />
         <ReactMarkdown
           remarkPlugins={[remarkMath]}
           rehypePlugins={[rehypeHighlight, rehypeKatex]}

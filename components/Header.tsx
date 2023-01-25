@@ -32,7 +32,10 @@ const Header = () => {
   return (
     <>
       <header className="fixed z-50 top-0 w-full flex flex-row justify-between items-center h-16 px-5 border-b bg-white lg:px-10 dark:bg-code-dark dark:border-b-gray-900">
-        <Link className="py-4 text-xl font-bold" href={"/"}>
+        <Link
+          className="py-4 text-xl font-bold hover:text-blue-300 transition duration-200"
+          href={"/"}
+        >
           Prefer2
         </Link>
         <div className="flex">

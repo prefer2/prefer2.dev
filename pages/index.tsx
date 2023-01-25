@@ -31,6 +31,7 @@ const Home = ({ allPosts }: HomeProps) => {
               title={post.title}
               date={post.date}
               description={post.description}
+              tags={post.tags}
             />
           </motion.div>
         ))}

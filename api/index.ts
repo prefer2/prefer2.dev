@@ -16,7 +16,14 @@ export const getPostBySlug = (slug: string): Post => {
   const { data, content } = matter(fileContents);
   const { date, title, description, tags } = data;
 
-  return { slug: realSlug, content, date, title, description, tags };
+  return {
+    slug: realSlug,
+    content,
+    date,
+    title,
+    description,
+    tags,
+  };
 };
 
 export const getAllPosts = () => {
