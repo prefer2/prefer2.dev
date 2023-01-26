@@ -18,7 +18,7 @@ function PostPreview({
   return (
     <li className="p-3">
       <Link className="group" href={`/posts/${slug}`}>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
           <h3 className="text-2xl font-bold mb-1 transition duration-200 group-hover:text-blue-300">
             {title}
           </h3>
