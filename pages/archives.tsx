@@ -5,6 +5,7 @@ import Tag from "@components/Tag";
 
 import { getAllPosts } from "api";
 import Post from "types/Post";
+import { formatMonthDay } from "utils";
 
 type postSortedByYear = { [key: number]: Post[] };
 
@@ -40,7 +41,10 @@ const Archives = ({ tags, yearSortedPosts }: ArchivesProps) => {
               <h3 className="mt-3 font-bold text-lg">{`${year} (${yearSortedPosts[year].length})`}</h3>
               <ul>
                 {yearSortedPosts[year].map((post) => (
-                  <li key={post.slug} className="my-1">
+                  <li key={post.slug} className="flex gap-2 my-1">
+                    <div className="text-blue-300">
+                      {formatMonthDay(post.date)}
+                    </div>
                     <Link href={`posts/${post.slug}`}>{post.title}</Link>
                   </li>
                 ))}
