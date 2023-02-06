@@ -60,6 +60,8 @@ Field(실제 사용자 모니터링)
 
 [web.dev web vitals](https://web.dev/vitals/)
 
+[Measuring Performance | Create React App](https://create-react-app.dev/docs/measuring-performance/)
+
 ---
 
 ## useState, useReducer
@@ -74,6 +76,8 @@ Kent 형님의 context 관련 영상. 다시보니 또 새롭네. Back to basic!
 [YouTube](https://www.youtube.com/watch?v=zpUMRsAO6-Y)
 
 이 책을 읽어보고 싶으다. 한글 번역이 없어서 큰맘먹고 사야한다. [Micro State Management with React Hooks | Kato, Daishi - 교보문고](https://product.kyobobook.co.kr/detail/S000061587593)
+
+---
 
 ## Korean FE Article Team
 
