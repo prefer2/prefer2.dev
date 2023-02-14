@@ -1,5 +1,5 @@
 ---
-title: 블로그 발전기(1)
+title: 블로그 발전기 - 1편
 date: "2023-01-16"
 description: "댓글기능 추가, recoil, scroll progress bar, 이전글 다음글"
 tags:
