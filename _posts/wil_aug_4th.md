@@ -1,10 +1,14 @@
 ---
 title: "[WIL] 8월 4, 5주차"
 date: "2023-09-02"
-description: "What "
-tags: 다시 공부 레고
+description: "다시 공부 레고"
+tags:
   - wil
   - aug
+  - deploy
+  - npm
+  - redux
+  - rtk
 ---
 
 ![image](https://github.com/prefer2/prefer2.dev/assets/67692759/6ff326a7-514c-4f56-bcaa-c7004804f176)
