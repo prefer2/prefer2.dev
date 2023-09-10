@@ -8,6 +8,8 @@ tags:
   - node
 ---
 
+![image](https://github.com/prefer2/prefer2.dev/assets/67692759/21c38633-0333-474e-9280-28983d5f093d)
+
 ## ACL, ACG
 
 [https://guide.ncloud-docs.com/docs/vpc-nacl-vpc](https://guide.ncloud-docs.com/docs/vpc-nacl-vpc)
